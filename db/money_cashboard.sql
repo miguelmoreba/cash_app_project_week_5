@@ -11,6 +11,6 @@ CREATE TABLE transactions
 (
   id SERIAL8 primary key,
   name VARCHAR(255),
-  amount VARCHAR(255),
+  amount DECIMAL,
   tag_id INT8 REFERENCES tags(id)
 );

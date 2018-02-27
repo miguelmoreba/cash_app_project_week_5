@@ -1,4 +1,23 @@
 require('sinatra')
 require('sinatra/contrib/all')
 require('pry-byebug')
-require_relative('models/transactions.rb')
+require_relative('../models/transactions.rb')
+require_relative('../models/tags.rb')
+
+get '/transactions' do
+  @transactions = Transaction.all
+  # @transactions_total = Transaction.total
+  erb(:index)
+end
+
+get '/transactions/new' do
+  @transactions = Transaction.all
+  @tags = Tag.all
+  erb(:"transactions/new")
+end
+
+post '/transactions' do
+  transaction = Transaction.new(params)
+  transaction.save
+  redirect to("/transactions")
+end

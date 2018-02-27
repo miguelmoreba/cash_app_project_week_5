@@ -1,0 +1,25 @@
+<h1>TRANSACTIONS</h1>
+
+<h2><a href="/transactions/new">ADD TRANSACTION</a></h2>
+
+<h4>TOTAL: <%= @transactions_total%></h4>
+
+<table>
+  <tr>
+    <th>concept</th>
+    <th></th>
+    <th>tag</th>
+    <th></th>
+    <th>amount</th>
+  </tr>
+  <%for transaction in @transactions %>
+  <tr>
+    <td><%= transaction.name %></td>
+    <td></td>
+  
+    <td>groceries</td>
+    <td></td>
+    <td><%= transaction.amount %></td>
+  </tr>
+  <% end %>
+</table>

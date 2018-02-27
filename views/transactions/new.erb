@@ -1,0 +1,32 @@
+<h1 id="new_transaction">Add new transaction</h1>
+
+
+<form action="/transactions" method="post">
+  <div>
+
+    <div>
+      <label for="name">name</label><br>
+      <input type="text" name="name" id="name">
+    </div>
+
+    <div>
+      <label for="tag_select">tag</label><br>
+      <select name="tag_id" id="tag_select">
+        <% @tags.each do |tag| %>
+        <option value=<%= tag.id %>><%= tag.name %></option>
+        <%end%>
+      </select>
+    </div>
+
+
+
+    <div>
+      <input type="number" step=".01" maxlength="10" name="amount" required id="amount">
+      <label for="amount">£</label>
+    </div>
+
+    <input type="submit" value="create">
+
+  </div>
+
+</form>
