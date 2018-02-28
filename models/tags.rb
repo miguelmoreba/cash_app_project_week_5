@@ -31,12 +31,20 @@ class Tag
     SqlRunner.run(sql)
   end
 
-  # def self.find(id)
-  #   sql = "SELECT * FROM tags
-  #   WHERE id = $1"
-  #   values = [id]
-  #   results = SqlRunner.run(sql, values)
-  #   return Tag.new(results.first)
-  # end
+  def self.find(id)
+    sql = "SELECT * FROM tags
+    WHERE id = $1"
+    values = [id]
+    results = SqlRunner.run(sql, values)
+    return Tag.new(results.first)
+  end
+
+  def transactions()
+    sql = "SELECT * FROM transactions
+    WHERE id = $1"
+    values = [@id]
+    results = SqlRunner.run( sql, values )
+    return results.map {|transaction| Transaction.new(transaction)}
+  end
 
 end

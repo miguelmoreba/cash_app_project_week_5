@@ -1,8 +1,55 @@
 <h1>TRANSACTIONS</h1>
 
-<h2><a href="/transactions/new">ADD TRANSACTION</a></h2>
+<div class="grid">
+  <div class="grid-row">
+    <h2><a href="/transactions/new">ADD TRANSACTION</a></h2>
+  </div>
 
-<h4>TOTAL: <%= @transactions_total%></h4>
+  <div class="grid-row">
+    <h4>TOTAL: <%= @transactions_total %></h4>
+  </div>
+
+  <div class="grid-row">
+    <table>
+      <tr>
+        <th>concept</th>
+        <th></th>
+        <th>tag</th>
+        <th></th>
+        <th>amount</th>
+      </tr>
+      <%for transaction in @transactions %>
+      <tr>
+        <td><%= transaction.name %></td>
+        <td></td>
+
+        <td><a href="/tag/<%=transaction.tag.id%>"><%= transaction.tag().name %></a></td>
+        <td></td>
+        <td><%= transaction.amount + " $" %></td>
+        <td></td>
+        <td>
+          <form method="post" action="/transactions/<%=transaction.id%>/delete">
+            <input type="submit" value="delete">
+          </form>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+<!-- <h2><a href="/transactions/new">ADD TRANSACTION</a></h2>
+
+<h4>TOTAL: <%= @transactions_total %></h4>
+
 
 <table>
   <tr>
@@ -16,10 +63,10 @@
   <tr>
     <td><%= transaction.name %></td>
     <td></td>
-  
-    <td>groceries</td>
+
+    <td><a href="/tag/<%=transaction.tag.id%>"><%= transaction.tag().name %></a></td>
     <td></td>
-    <td><%= transaction.amount %></td>
+    <td><%= transaction.amount + " $" %></td>
   </tr>
   <% end %>
-</table>
+</table> -->

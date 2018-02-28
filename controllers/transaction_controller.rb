@@ -6,7 +6,7 @@ require_relative('../models/tags.rb')
 
 get '/transactions' do
   @transactions = Transaction.all
-  # @transactions_total = Transaction.total
+  @transactions_total = Transaction.total
   erb(:index)
 end
 
@@ -20,4 +20,10 @@ post '/transactions' do
   transaction = Transaction.new(params)
   transaction.save
   redirect to("/transactions")
+end
+
+post '/transactions/:id/delete' do
+  transaction = Transaction.find(params[:id])
+  transaction.delete
+  redirect to '/transactions'
 end

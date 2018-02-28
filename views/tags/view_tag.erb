@@ -1,0 +1,17 @@
+<h1><%=@tag.name%></h1>
+<table>
+  <tr>
+    <th>concept</th>
+    <th></th>
+    <th>amount</th>
+    <th></th>
+  </tr>
+  <% for transaction in @tag.transactions%>
+    <tr>
+      <td><%=transaction.name%></td>
+      <td></td>
+      <td><%=transaction.amount%></td>
+      <td></td>
+    </tr>
+    <% end %>
+  </table>
