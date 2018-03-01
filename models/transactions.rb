@@ -55,6 +55,14 @@ class Transaction
     return transactions[0]['total']
   end
 
+  def self.total_tag(id)
+    sql = "SELECT SUM(amount) as total FROM transactions
+    WHERE id = $1"
+    values = [id]
+    transactions = SqlRunner.run(sql, values)
+    return transactions[0]['total']
+  end
+
   def self.find(id)
     sql = "SELECT * FROM transactions
     WHERE id = $1"

@@ -3,7 +3,7 @@ background-size: 100%;
 } */
 
 
-h1, h2, h3, h4, h5, h6 {
+/* h1, h2, h3, h4, h5, h6 {
 font-family: 'Poppins', sans-serif;
 margin: 0px;
 padding: 0px;
@@ -25,9 +25,6 @@ color: #a2937e;
 text-decoration: none;
 }
 
-a:hover, a:active, a:focus {
-color: #c6e2ff;
-}
 
 nav {
 padding: 0px;
@@ -60,11 +57,6 @@ display: flex;
 flex-direction: row;
 }
 
-#content {
-border-left: 1px solid darkred;
-padding-left: 25px;
-}
-
 #new_transaction {
   font-size: 60px;
 }
@@ -73,4 +65,37 @@ input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
+} */
+
+.grid {
+  border: solid 1px mediumaquamarine;
+}
+
+.grid-row {
+  display: flex;
+  flex-direction: column;
+}
+
+.cell {
+  flex: 1;
+  padding: 10px;
+  border: solid 1px mediumaquamarine;
+}
+
+@media all and (min-width: 480px) {
+  .grid-row-sm {
+    flex-direction: row;
+  }
+}
+
+@media all and (min-width: 720px) {
+  .grid-rown-md {
+    flex-direction: row;
+  }
+}
+
+@media all and (min-width: 960px) {
+  .grid-row-lg {
+    flex-direction: row;
+  }
 }

@@ -14,7 +14,7 @@
       <tr>
         <th>concept</th>
         <th></th>
-        <th>tag</th>
+        <th><a href="/tags">tag</a></th>
         <th></th>
         <th>amount</th>
       </tr>
@@ -29,7 +29,7 @@
         <td></td>
         <td>
           <form method="post" action="/transactions/<%=transaction.id%>/delete">
-            <input type="submit" value="delete">
+            <input type="submit" value="delete" id="delete_">
           </form>
         </td>
       </tr>
@@ -52,21 +52,21 @@
 
 
 <table>
-  <tr>
-    <th>concept</th>
-    <th></th>
-    <th>tag</th>
-    <th></th>
-    <th>amount</th>
-  </tr>
-  <%for transaction in @transactions %>
-  <tr>
-    <td><%= transaction.name %></td>
-    <td></td>
+<tr>
+<th>concept</th>
+<th></th>
+<th>tag</th>
+<th></th>
+<th>amount</th>
+</tr>
+<%for transaction in @transactions %>
+<tr>
+<td><%= transaction.name %></td>
+<td></td>
 
-    <td><a href="/tag/<%=transaction.tag.id%>"><%= transaction.tag().name %></a></td>
-    <td></td>
-    <td><%= transaction.amount + " $" %></td>
-  </tr>
-  <% end %>
+<td><a href="/tag/<%=transaction.tag.id%>"><%= transaction.tag().name %></a></td>
+<td></td>
+<td><%= transaction.amount + " $" %></td>
+</tr>
+<% end %>
 </table> -->
