@@ -30,6 +30,25 @@ class Transaction
     @id = results.first()['id'].to_i
   end
 
+  def update()
+    sql = "UPDATE transactions
+    SET
+    (
+      name,
+      tag_id,
+      amount
+    )
+    =
+    (
+      $2,
+      $3,
+      $4
+    )
+      WHERE id = $1"
+      values = [@name, @tag_id, @amount]
+      SqlRunner.run(sql, values)
+    end
+
   def delete()
     sql = "DELETE FROM transactions
     WHERE id = $1"

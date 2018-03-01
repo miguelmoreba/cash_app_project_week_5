@@ -1,15 +1,15 @@
-/* body {
+* body {
 background-size: 100%;
 } */
 
 
-/* h1, h2, h3, h4, h5, h6 {
-font-family: 'Poppins', sans-serif;
+h1 {
+font-family: 'Arial', sans-serif;
 margin: 0px;
 padding: 0px;
 }
 
-h1 {
+/* h1 {
 font-size: 1.8em;
 color: darkred;
 margin-bottom: 20px;
@@ -18,7 +18,7 @@ text-align: center;
 
 h2 {
   text-align: center;
-}
+} */
 
 a, a:link, a:visited {
 color: #a2937e;
