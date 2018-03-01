@@ -40,12 +40,12 @@ class Transaction
     )
     =
     (
+      $1,
       $2,
-      $3,
-      $4
+      $3
     )
-      WHERE id = $1"
-      values = [@id, @name, @tag_id, @amount]
+      WHERE id = $4"
+      values = [@name, @tag_id, @amount, @id]
       SqlRunner.run(sql, values)
     end
 
