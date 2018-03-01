@@ -1,11 +1,12 @@
 <h1>tags</h1>
 
-<% for tag in @tags do %>
+
 <table>
+  <% for tag in @tags do %>
   <tr>
     <td><%= tag.name %></td>
     <td></td>
   </tr>
+  <%end%>
 
 </table>
-<%end%>

@@ -1,0 +1,33 @@
+h1, h3, h4 {
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  color: white;
+}
+
+a, a:link, a:visited {
+  color: purple;
+  text-decoration: none;
+}
+
+body {
+  background: url('/images/fondo.jpg');
+  background-size: cover;
+}
+
+nav {
+  height: 50px;
+  text-align: center;
+  background-color: black;
+}
+
+nav ul li {
+  text-align: center;
+  display: inline;
+  color: white;
+  font-style: 'Poppins', sans-serif;
+}
+
+nav li a {
+  padding: 20px;
+  font-style: 'Poppins', sans-serif;
+}
