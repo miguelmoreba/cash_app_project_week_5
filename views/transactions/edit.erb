@@ -1,0 +1,37 @@
+<h1 id="new_transaction">Edit transaction</h1>
+
+
+<form action="/transactions/<%=@transaction.id%>/edit" method="post">
+  <div>
+
+
+      <label for="name">name</label><br>
+      <input type="text"
+      name="name"
+      id="name"
+      value="<%=@transaction.name%>">
+
+
+
+      <label for="tag_select">tag</label><br>
+      <select name="tag_id" id="tag_select">
+        <% @tags.each do |tag| %>
+        <option value=<%= tag.id %>><%= tag.name %></option>
+        <%end%>
+      </select>
+
+
+
+
+
+      <input type="number" step=".01" min="0" max="100000"
+      name="amount" required id="amount"
+      value="<%=@transaction.amount%>">
+      <label for="amount">£</label>
+
+
+    <input type="submit" value="update">
+
+  </div>
+
+</form>

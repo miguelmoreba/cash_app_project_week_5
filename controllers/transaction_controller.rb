@@ -16,14 +16,26 @@ get '/transactions/new' do
   erb(:"transactions/new")
 end
 
+get '/transactions/:id/edit' do
+  @transaction = Transaction.find(params[:id])
+  @tags = Tag.all
+  erb(:"transactions/edit")
+end
+
 post '/transactions' do
   transaction = Transaction.new(params)
   transaction.save
-  redirect to("/transactions")
+  redirect to '/transactions'
 end
 
 post '/transactions/:id/delete' do
   transaction = Transaction.find(params[:id])
   transaction.delete
+  redirect to '/transactions'
+end
+
+post '/transactions/:id/edit' do
+  transaction = Transaction.find(params[:id])
+  transaction.update
   redirect to '/transactions'
 end
