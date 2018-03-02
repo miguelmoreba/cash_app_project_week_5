@@ -1,1 +1,15 @@
+form {
+  text-align: center;
+}
 
+
+label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  color: white;
+  display: block;
+}
+
+#tag_title {
+  color: black;
+}

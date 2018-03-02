@@ -9,10 +9,19 @@ td, th {
   padding: 10px 20px 0px 0px;
 }
 
+th {
+  font-size: 30px;
+}
+
+td {
+  font-size: 25px;
+  color: white;
+}
+
 tr:nth-child(even) {
-    background-color: orange;
+    background-color: transparent;
 }
 
 tr:nth-child(odd) {
-    background-color: gray;
+    background-color: transparent;
 }
