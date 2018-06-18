@@ -76,7 +76,7 @@ class Transaction
 
   def self.total_tag(id)
     sql = "SELECT SUM(amount) as total FROM transactions
-    WHERE id = $1"
+    WHERE tag_id = $1"
     values = [id]
     transactions = SqlRunner.run(sql, values)
     return transactions[0]['total']

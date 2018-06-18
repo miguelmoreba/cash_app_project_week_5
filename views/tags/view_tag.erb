@@ -1,5 +1,5 @@
 <h1><%=@tag.name%></h1>
-<h2>TOTAL <%= @transactions_total_tag  %></h2>
+<h1>TOTAL <%= @transactions_total_tag  %> $</h1>
 <table>
   <tr>
     <th>concept</th>
@@ -11,7 +11,7 @@
   <tr>
     <td><%=transaction.name%></td>
     <td></td>
-    <td><%=transaction.amount%></td>
+    <td><%=transaction.amount%> $</td>
     <td></td>
   </tr>
   <% end %>

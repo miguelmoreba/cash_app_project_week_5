@@ -4,7 +4,7 @@
 <table>
   <% for tag in @tags do %>
   <tr>
-    <td><%= tag.name %></td>
+    <td><a href="/tag/<%=tag.id%>"><%= tag.name %></a></td>
     <td></td>
   </tr>
   <%end%>
