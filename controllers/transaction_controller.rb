@@ -35,6 +35,6 @@ post '/transactions/:id/delete' do
 end
 
 post '/transactions/:id' do #update
-  Transaction.new(params).update
+  Transaction.new(params)
   redirect to '/transactions'
 end

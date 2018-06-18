@@ -2,10 +2,11 @@ require_relative('../db/sql_runner.rb')
 
 class Transaction
 
-  attr_reader( :id, :name, :tag_id, :amount)
+  attr_reader( :id, :dt, :name, :tag_id, :amount)
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
+    @dt = options['dt']
     @name = options['name']
     @tag_id = options['tag_id']
     @amount = options['amount']
@@ -14,6 +15,7 @@ class Transaction
   def save()
     sql = "INSERT INTO transactions
     (
+      dt,
       name,
       tag_id,
       amount
@@ -22,10 +24,11 @@ class Transaction
     (
       $1,
       $2,
-      $3
+      $3,
+      $4
     )
     RETURNING id"
-    values = [@name, @tag_id, @amount]
+    values = [@dt, @name, @tag_id, @amount]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
@@ -44,10 +47,10 @@ class Transaction
       $2,
       $3
     )
-      WHERE id = $4"
-      values = [@name, @tag_id, @amount, @id]
-      SqlRunner.run(sql, values)
-    end
+    WHERE id = $4"
+    values = [@name, @tag_id, @amount, @id]
+    SqlRunner.run(sql, values)
+  end
 
   def delete()
     sql = "DELETE FROM transactions
@@ -95,4 +98,16 @@ class Transaction
     return Tag.find(@tag_id)
   end
 
+
+  def nice_date(date)
+    year = date[0,4]
+    month = date[5,2]
+    day = date[8,2]
+    return "#{day}/#{month}/#{year}"
+  end
+
+
+  def return_hi
+    return "hi"
+  end
 end

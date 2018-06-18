@@ -19,6 +19,7 @@ tag2 = Tag.new({
 tag2.save
 
 transaction1 = Transaction.new({
+  "dt" => "2-12-17",
   "name" => "Week groceries",
   "tag_id" => tag1.id,
   "amount" => 14.35
@@ -27,6 +28,7 @@ transaction1 = Transaction.new({
 transaction1.save
 
 transaction2 = Transaction.new({
+  "dt" => "2-12-17",
   "name" => "shite",
   "tag_id" => tag2.id,
   "amount" => 8.00

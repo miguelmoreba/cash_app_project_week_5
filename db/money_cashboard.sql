@@ -10,6 +10,7 @@ CREATE TABLE tags
 CREATE TABLE transactions
 (
   id SERIAL8 primary key,
+  dt DATE,
   name VARCHAR(255),
   amount DECIMAL,
   tag_id INT8 REFERENCES tags(id)
