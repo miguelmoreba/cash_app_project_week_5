@@ -3,8 +3,12 @@ require('sinatra')
 require_relative('controllers/transaction_controller.rb')
 require_relative('controllers/tags_controller.rb')
 
-get '/' do
-  @transactions = Transaction.all
-  @transactions_total = Transaction.total
-  erb(:index)
+class App < Sinatra::Base
+
+  get '/' do
+    @transactions = Transaction.all
+    @transactions_total = Transaction.total
+    erb(:index)
+  end
+
 end
